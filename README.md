@@ -1,4 +1,4 @@
-### Road plane computation
+### Road Plane Computation
 
 Reassambled bundle for road-plane computation from [1] for my conveniance.
 
