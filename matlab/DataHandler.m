@@ -10,9 +10,9 @@ classdef DataHandler < Introspector
         OUT_SUB
         IM_LEFT = 'image_2';
         IM_RIGHT = 'image_3';
-        IM_SUBDIRS = '0019';
+        IM_SUBDIRS = '0013';
         CALIB = 'calib';
-        CALIB_FILE = '0019.txt';
+        CALIB_FILE = '0013.txt';
         SET_TRAIN = 'road_training';  % training set of KITTI road benchmark
 %       SET_TEST = 'stereo_multiview_training'; % KITTI object detection dataset
         SET_TEST = 'object_training';
@@ -31,7 +31,7 @@ classdef DataHandler < Introspector
             % Go up until we reach the parent of the code folder
             dh.PROJECT_PATH = parentUntil(mfilename('fullpath'), CODE_FOLDER);
             dh.PROJECT_PATH = fullfile(dh.PROJECT_PATH, CODE_FOLDER);
-            dh.SPSSTEREO_PATH = fullfile(dh.PROJECT_PATH, '../spsstereo');
+            dh.SPSSTEREO_PATH = fullfile(dh.PROJECT_PATH, './spsstereo');
             dh.STEREO_DIR = 'results';
             dh.DATA_DIR = 'data/';
             dh.OUT_DIR = dh.DATA_DIR;
