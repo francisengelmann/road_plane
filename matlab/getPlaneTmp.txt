@@ -1,0 +1,23 @@
+function plane = getPlane(pos, mask, varargin)
+    plane = struct;
+    if sum(mask(:)) < 3
+        yPos = -1.65;
+        if self.dh.COORD_TYPE == 1
+            yPos = yPos * -1;
+        end
+        plane.point = [0 yPos 0];
+        plane.u = [1 0 0];
+        plane.v = [0 0 1];
+        plane.normal = [0 1 0];
+        plane.inliers = false(size(mask));
+        plane.numInliers = 0;
+        plane.percentInliers = 0;
+        return;
+    end
+    
+    plane = ransacPlane(pos.X(mask), pos.Y(mask), pos.Z(mask), ...
+            varargin{:});
+    if plane.normal(2) < 0
+        plane.normal = plane.normal * -1;
+    end
+end
