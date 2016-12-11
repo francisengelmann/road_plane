@@ -1,6 +1,6 @@
 ### Road Plane Computation
 
-Reassambled bundle for road-plane computation from [1] for my conveniance.
+Reassembled bundle for road-plane estimation from [1] for my convenience.
 
 ### Usage
 - Create a symbolic link to your dataset in ```./data``` named data_object (see ```./matlab/DataHandler.m```).
